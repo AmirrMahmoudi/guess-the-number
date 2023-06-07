@@ -21,7 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
     maximumNumber = Number(maximumInput.value);
     if (maximumNumber > 10) {
       targetNumber = Math.floor(Math.random() * (maximumNumber + 1));
-      totalChances = Math.floor(Math.log2(maximumNumber)) + 1;
+      // totalChances = Math.floor(Math.log2(maximumNumber)) + 1;
+      totalChances = 10;
       chancesSpan.textContent = totalChances;
       stage1.classList.toggle("d-none");
       stage2.classList.toggle("d-none");
@@ -39,38 +40,33 @@ document.addEventListener("DOMContentLoaded", () => {
   guessButton.addEventListener("click", guess);
   function guess(event) {
     event.preventDefault();
-    let yourGuess = parseInt(guessInput.value);
+    let yourGuess = +guessInput.value;
     let remainingChances;
 
     switch (true) {
       case yourGuess == targetNumber:
         stage2.innerHTML = `<h4 class="text-bg-success p-1">تبریک شما موفق شدید عدد <span class="text-bg-warning px-1">${targetNumber}</span> را به درستی حدس بزنید</h4>`;
         return;
-        break;
       case yourGuess > maximumNumber:
         alert("حدس شما نمیتواند از حد بالا که تعیین کردید بزرگ تر باشد");
         guessInput.select();
         return;
-        break;
       case yourGuess < 0:
         alert("عدد منفی مجاز نمی باشد");
         guessInput.select();
 
         return;
-        break;
       case yourGuess > targetNumber:
-        showStatus.innerHTML += ` <span class="text-danger p-2 rounded bg-white">${yourGuess}</span> `;
+        showStatus.innerHTML += ` <span class="text-danger h5 p-2 my-1 rounded bg-white">${yourGuess}</span> `;
         break;
 
       case yourGuess < targetNumber:
-        showStatus.innerHTML += ` <span class="text-primary p-2 rounded bg-white">${yourGuess}</span> `;
+        showStatus.innerHTML += ` <span class="text-primary h5 p-2 my-1 rounded bg-white">${yourGuess}</span> `;
         break;
-
       case isNaN(yourGuess):
         alert(" فقط عدد صحیح وارد کنید");
         guessInput.select();
         return;
-        break;
     }
 
     remainingChances = Number(chancesSpan.textContent);
