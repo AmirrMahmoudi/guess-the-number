@@ -7,3 +7,8 @@
 .container {
   min-height: 480px !important;
 }
+
+#status>span {
+  display: inline-block;
+
+}

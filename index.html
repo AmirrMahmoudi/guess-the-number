@@ -13,16 +13,16 @@
   <title>guess number</title>
 </head>
 
-<body>
-  <div class="container bg-dark my-4" id="main">
+<body class="bg-secondary-subtle">
+  <div class="container bg-dark" id="main">
     <div
-      class="row  bg-secondary-subtle my-5 border-bottom border border-3 p-5 justify-content-center align-items-center w-75 mx-auto">
+      class="row  bg-light my-5 border-bottom border border-3 p-5 justify-content-center align-items-center w-75 mx-auto">
 
       <div class="col">
 
         <h1 class=" py-3">عدد را حدس بزن</h1>
       </div>
-      <div class="col-2">
+      <div class="col-3">
         <button id="again" class="btn btn-danger btn-lg ">از اول</button>
       </div>
     </div>
@@ -31,7 +31,7 @@
     <div class="text-light" id="stage1">
       <form action="#" class="row">
         <h4 id="h4" class="">یک عدد را به عنوان حد بالا وارد کنید</h4>
-        <div class="col-2 p-1">
+        <div class="col-5 p-1">
           <input id="maximum" class="form-control form-control" type="text">
         </div>
         <div class="col-3 p-1 ">
@@ -46,10 +46,10 @@
 
       <div action="" class="">
         <form class="row" action="#">
-          <div class="col-3">
+          <div class="col-4">
             <input class="form-control col-2" type="text" id="guess-number">
           </div>
-          <div class="col-2">
+          <div class="col-3">
 
             <button class="btn btn-primary" id="guess-button">حدس بزن</button>
           </div>
@@ -75,8 +75,9 @@
         </ul>
 
       </div>
-      <div class="div py-3 mb-4">
-        <h4 id="status">حدس های شما : </h4>
+      <div id="status" class="div py-3 m-4">
+        <h4 class="my-4 p-1">حدس های شما : </h4>
+
       </div>
 
     </div>
